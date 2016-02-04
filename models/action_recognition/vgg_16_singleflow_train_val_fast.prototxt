@@ -20,6 +20,7 @@ layer {
     multi_scale: true
     max_distort: 1
     scale_ratios: [1,.875,.75,.66]
+    is_flow: true
     mean_value: [128, 128, 128]
   }
   include: { phase: TRAIN }
@@ -41,6 +42,7 @@ layer {
   transform_param{
     crop_size: 224
     mirror: false
+    is_flow: true
     mean_value: [128, 128, 128]
   }
   include: { phase: TEST }
