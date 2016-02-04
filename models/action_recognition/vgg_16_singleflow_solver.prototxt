@@ -10,6 +10,6 @@ max_iter: 30000
 momentum: 0.9
 weight_decay: 0.0005
 snapshot: 1000
-snapshot_prefix: "cuhk_action_recognition_vgg_16_split1_singleflow"
+snapshot_prefix: "models/action_recognition/snapshot/cuhk_action_recognition_vgg_16_split1_singleflow"
 iter_size: 3
 device_id: [0,1,2,3]
