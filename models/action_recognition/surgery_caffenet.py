@@ -69,7 +69,7 @@ if __name__ == "__main__":
         conv_params_surgery[pr_conv][0].flat = conv_params_origin[pr][0][:,:3,:,:].flat  # select 3 channels and flat unrolls the arrays
         conv_params_surgery[pr_conv][1][...] = conv_params_origin[pr][1]
 
-    net_surgery.save('cuhk_action_singleflow_vgg_16_split1.caffemodel')
+    net_surgery.save('vgg_16_action_singleflow_pretrain.caffemodel')
 
     print '*********** PROCESSED ALL *************'
 
