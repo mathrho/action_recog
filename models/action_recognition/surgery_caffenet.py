@@ -12,8 +12,6 @@ if caffelib:
     sys.path.append(caffepath)
 
 import caffe
-from extract_features_rgbcnn import batch_predict
-
 
 def caffe_init(use_gpu, model_def_file, model_file, gpu_id):
     """
