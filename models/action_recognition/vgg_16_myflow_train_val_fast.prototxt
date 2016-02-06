@@ -7,7 +7,7 @@ layer {
   video_data_param {
     source: "examples/action_recognition/dataset_file_examples/train_flow_split1.txt"
     batch_size: 22
-    new_length: 10
+    new_length: 1
     num_segments: 1
     modality: FLOW
   }
@@ -19,7 +19,7 @@ layer {
 	max_distort: 1
     scale_ratios: [1,.875,.75]
     is_flow: true
-	mean_value: [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]
+	mean_value: [128, 128]
   }
   include: { phase: TRAIN }
 }
@@ -31,7 +31,7 @@ layer {
   video_data_param {
     source: "examples/action_recognition/dataset_file_examples/val_flow_split1.txt"
     batch_size: 5
-    new_length: 10
+    new_length: 1
     num_segments: 1
     modality: FLOW
   }
@@ -39,7 +39,7 @@ layer {
     crop_size: 224
     mirror: false
     is_flow: true
-    mean_value: [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]
+    mean_value: [128, 128]
   }
   include: { phase: TEST }
 }
