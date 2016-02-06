@@ -44,10 +44,10 @@ layer {
   include: { phase: TEST }
 }
 layer {
-  name: "conv1_1"
+  name: "conv1_1_flow"
   type: "Convolution"
   bottom: "data"
-  top: "conv1_1"
+  top: "conv1_1_flow"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -65,13 +65,13 @@ layer {
 layer {
   name: "relu1_1"
   type: "ReLU"
-  bottom: "conv1_1"
-  top: "conv1_1"
+  bottom: "conv1_1_flow"
+  top: "conv1_1_flow"
 }
 layer {
   name: "conv1_2"
   type: "Convolution"
-  bottom: "conv1_1"
+  bottom: "conv1_1_flow"
   top: "conv1_2"
   param {
     lr_mult: 1
