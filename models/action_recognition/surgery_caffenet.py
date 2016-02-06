@@ -49,7 +49,8 @@ if __name__ == "__main__":
 
     # initialize original caffe network
     net_origin = caffe_init(0, 'cuhk_action_temporal_vgg_16_flow_deploy.prototxt', 'vgg_16_action_flow_pretrain.caffemodel', None)
-    net_surgery = caffe_init(0, 'cuhk_action_singleflow_vgg_16_deploy.prototxt', 'vgg_16_action_flow_pretrain.caffemodel', None)
+    #net_surgery = caffe_init(0, 'cuhk_action_singleflow_vgg_16_deploy.prototxt', 'vgg_16_action_flow_pretrain.caffemodel', None)
+    net_surgery = caffe_init(0, 'cuhk_action_myflow_vgg_16_deploy.prototxt', 'vgg_16_action_flow_pretrain.caffemodel', None)
 
     print("net_origin: blobs {}\nparams {}".format(net_origin.blobs.keys(), net_origin.params.keys()))
     print("net_surgery: blobs {}\nparams {}".format(net_surgery.blobs.keys(), net_surgery.params.keys()))
@@ -66,10 +67,12 @@ if __name__ == "__main__":
         print '{} weights are {} dimensional and biases are {} dimensional'.format(conv, conv_params_surgery[conv][0].shape, conv_params_surgery[conv][1].shape)
 
     for pr, pr_conv in zip(params_origin, params_surgery):
-        conv_params_surgery[pr_conv][0].flat = conv_params_origin[pr][0][:,:3,:,:].flat  # select 3 channels and flat unrolls the arrays
+        #conv_params_surgery[pr_conv][0].flat = conv_params_origin[pr][0][:,:3,:,:].flat  # select 3 channels and flat unrolls the arrays
+        conv_params_surgery[pr_conv][0].flat = conv_params_origin[pr][0][:,:2,:,:].flat
         conv_params_surgery[pr_conv][1][...] = conv_params_origin[pr][1]
 
-    net_surgery.save('vgg_16_action_singleflow_pretrain.caffemodel')
+    #net_surgery.save('vgg_16_action_singleflow_pretrain.caffemodel')
+    net_surgery.save('vgg_16_action_myflow_pretrain.caffemodel')
 
     print '*********** PROCESSED ALL *************'
 
