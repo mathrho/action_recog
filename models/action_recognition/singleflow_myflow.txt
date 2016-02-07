@@ -1,0 +1,13 @@
+I0206 05:19:16.829882 39011 solver.cpp:428] Iteration 10000, Testing net (#0)
+I0206 05:19:29.671267 39011 solver.cpp:484]     Test net output #0: accuracy = 0.414412
+I0206 05:19:29.671308 39011 solver.cpp:484]     Test net output #1: loss = 2.35166 (* 1 = 2.35166 loss)
+I0206 05:19:32.084475 39011 solver.cpp:240] Iteration 10000, loss = 2.40319
+I0206 05:19:32.084524 39011 solver.cpp:631] Iteration 10000, lr = 0.0005
+
+
+
+I0207 03:13:35.996613 11529 solver.cpp:428] Iteration 10000, Testing net (#0)
+I0207 03:13:49.100294 11529 solver.cpp:484]     Test net output #0: accuracy = 0.479706
+I0207 03:13:49.100378 11529 solver.cpp:484]     Test net output #1: loss = 2.04522 (* 1 = 2.04522 loss)
+I0207 03:13:51.578333 11529 solver.cpp:240] Iteration 10000, loss = 2.12966
+I0207 03:13:51.578379 11529 solver.cpp:631] Iteration 10000, lr = 0.005
