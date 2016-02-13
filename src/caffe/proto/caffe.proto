@@ -400,7 +400,7 @@ message TransformationParameter {
   optional bool is_flow = 14 [default = false];
 
   //if set to true, it is (single-frame) optical flow field with 3 channels
-  optional bool is_singleflow = 15 [default = false];
+  optional bool is_singleflow = 16 [default = false];
 }
 
 // Message that stores parameters shared by loss layers
