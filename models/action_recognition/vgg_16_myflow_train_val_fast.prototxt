@@ -6,7 +6,7 @@ layer {
   top: "label_local"
   video_data_param {
     source: "examples/action_recognition/dataset_file_examples/train_myflow_split1.txt"
-    batch_size: 16
+    batch_size: 22
     new_width: 340
     new_height: 256
     new_length: 1
@@ -19,7 +19,7 @@ layer {
     fix_crop: true
     multi_scale: true
     max_distort: 1
-    scale_ratios: [1,.875,.75,.66]
+    scale_ratios: [1,.875,.75]
     is_singleflow: true
     mean_value: [128, 128, 128]
   }
@@ -464,7 +464,7 @@ layer {
   bottom: "fc6"
   top: "fc6"
   dropout_param {
-    dropout_ratio: 0.7
+    dropout_ratio: 0.9
   }
 }
 layer {
@@ -496,7 +496,7 @@ layer {
   bottom: "fc7"
   top: "fc7"
   dropout_param {
-    dropout_ratio: 0.9
+    dropout_ratio: 0.8
   }
 }
 layer {
