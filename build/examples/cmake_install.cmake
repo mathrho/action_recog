@@ -37,15 +37,15 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_data")
     FILE(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_data"
-         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
   ENDIF()
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/examples/mnist/convert_mnist_data")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_data" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_data")
     FILE(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_data"
-         OLD_RPATH "/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/Workspace/devel/project/vision/action_recog/build/lib:/home/zhenyang/anaconda/lib::::::::"
-         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         OLD_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/lib:/home/zhenyang/anaconda/lib::::::::"
+         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
     IF(CMAKE_INSTALL_DO_STRIP)
       EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_data")
     ENDIF(CMAKE_INSTALL_DO_STRIP)
@@ -57,15 +57,15 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_siamese_data")
     FILE(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_siamese_data"
-         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
   ENDIF()
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/examples/siamese/convert_mnist_siamese_data")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_siamese_data" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_siamese_data")
     FILE(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_siamese_data"
-         OLD_RPATH "/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/Workspace/devel/project/vision/action_recog/build/lib:/home/zhenyang/anaconda/lib::::::::"
-         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         OLD_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/lib:/home/zhenyang/anaconda/lib::::::::"
+         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
     IF(CMAKE_INSTALL_DO_STRIP)
       EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_mnist_siamese_data")
     ENDIF(CMAKE_INSTALL_DO_STRIP)
@@ -77,15 +77,15 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_cifar_data")
     FILE(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_cifar_data"
-         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
   ENDIF()
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/examples/cifar10/convert_cifar_data")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_cifar_data" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_cifar_data")
     FILE(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_cifar_data"
-         OLD_RPATH "/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/Workspace/devel/project/vision/action_recog/build/lib:/home/zhenyang/anaconda/lib::::::::"
-         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         OLD_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/lib:/home/zhenyang/anaconda/lib::::::::"
+         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
     IF(CMAKE_INSTALL_DO_STRIP)
       EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/convert_cifar_data")
     ENDIF(CMAKE_INSTALL_DO_STRIP)
@@ -97,15 +97,15 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/classification")
     FILE(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/classification"
-         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
   ENDIF()
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/examples/cpp_classification/classification")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/classification" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/classification")
     FILE(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/classification"
-         OLD_RPATH "/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/Workspace/devel/project/vision/action_recog/build/lib:/home/zhenyang/anaconda/lib::::::::"
-         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         OLD_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/lib:/home/zhenyang/anaconda/lib::::::::"
+         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
     IF(CMAKE_INSTALL_DO_STRIP)
       EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/classification")
     ENDIF(CMAKE_INSTALL_DO_STRIP)

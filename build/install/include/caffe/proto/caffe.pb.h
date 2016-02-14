@@ -3310,6 +3310,13 @@ class TransformationParameter : public ::google::protobuf::Message {
   inline bool is_flow() const;
   inline void set_is_flow(bool value);
 
+  // optional bool is_singleflow = 16 [default = false];
+  inline bool has_is_singleflow() const;
+  inline void clear_is_singleflow();
+  static const int kIsSingleflowFieldNumber = 16;
+  inline bool is_singleflow() const;
+  inline void set_is_singleflow(bool value);
+
   // @@protoc_insertion_point(class_scope:caffe.TransformationParameter)
  private:
   inline void set_has_scale();
@@ -3334,6 +3341,8 @@ class TransformationParameter : public ::google::protobuf::Message {
   inline void clear_has_max_distort();
   inline void set_has_is_flow();
   inline void clear_has_is_flow();
+  inline void set_has_is_singleflow();
+  inline void clear_has_is_singleflow();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -3350,6 +3359,7 @@ class TransformationParameter : public ::google::protobuf::Message {
   bool more_fix_crop_;
   bool multi_scale_;
   bool is_flow_;
+  bool is_singleflow_;
   ::google::protobuf::RepeatedField< float > scale_ratios_;
   ::google::protobuf::int32 max_distort_;
   friend void  protobuf_AddDesc_caffe_2eproto();
@@ -14719,6 +14729,30 @@ inline void TransformationParameter::set_is_flow(bool value) {
   set_has_is_flow();
   is_flow_ = value;
   // @@protoc_insertion_point(field_set:caffe.TransformationParameter.is_flow)
+}
+
+// optional bool is_singleflow = 16 [default = false];
+inline bool TransformationParameter::has_is_singleflow() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void TransformationParameter::set_has_is_singleflow() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void TransformationParameter::clear_has_is_singleflow() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void TransformationParameter::clear_is_singleflow() {
+  is_singleflow_ = false;
+  clear_has_is_singleflow();
+}
+inline bool TransformationParameter::is_singleflow() const {
+  // @@protoc_insertion_point(field_get:caffe.TransformationParameter.is_singleflow)
+  return is_singleflow_;
+}
+inline void TransformationParameter::set_is_singleflow(bool value) {
+  set_has_is_singleflow();
+  is_singleflow_ = value;
+  // @@protoc_insertion_point(field_set:caffe.TransformationParameter.is_singleflow)
 }
 
 // -------------------------------------------------------------------

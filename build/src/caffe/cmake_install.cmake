@@ -45,15 +45,15 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcaffe.so")
     FILE(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcaffe.so"
-         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
   ENDIF()
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/lib/libcaffe.so")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcaffe.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcaffe.so")
     FILE(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcaffe.so"
-         OLD_RPATH "/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
-         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/local/lib:/usr/local/cuda-7.0/lib64:/home/zhenyang/anaconda/lib")
+         OLD_RPATH "/home/zhenyang/anaconda/lib:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+         NEW_RPATH "/home/zhenyang/Workspace/devel/project/vision/action_recog/build/install/lib:/home/zhenyang/anaconda/lib")
     IF(CMAKE_INSTALL_DO_STRIP)
       EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcaffe.so")
     ENDIF(CMAKE_INSTALL_DO_STRIP)

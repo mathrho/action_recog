@@ -304,8 +304,8 @@ clean: src/caffe/test/CMakeFiles/runtest.dir/clean
 
 # All Build rule for target.
 src/caffe/test/CMakeFiles/test.testbin.dir/all: src/caffe/CMakeFiles/proto.dir/all
-src/caffe/test/CMakeFiles/test.testbin.dir/all: src/gtest/CMakeFiles/gtest.dir/all
 src/caffe/test/CMakeFiles/test.testbin.dir/all: src/caffe/CMakeFiles/caffe.dir/all
+src/caffe/test/CMakeFiles/test.testbin.dir/all: src/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f src/caffe/test/CMakeFiles/test.testbin.dir/build.make src/caffe/test/CMakeFiles/test.testbin.dir/depend
 	$(MAKE) -f src/caffe/test/CMakeFiles/test.testbin.dir/build.make src/caffe/test/CMakeFiles/test.testbin.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/zhenyang/Workspace/devel/project/vision/action_recog/build/CMakeFiles  71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98
