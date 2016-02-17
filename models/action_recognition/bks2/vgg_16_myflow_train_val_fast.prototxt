@@ -7,19 +7,21 @@ layer {
   video_data_param {
     source: "examples/action_recognition/dataset_file_examples/train_myflow_split1.txt"
     batch_size: 22
+    new_width: 340
+    new_height: 256
     new_length: 1
     num_segments: 1
-    modality: FLOW
+    modality: RGB
   }
   transform_param{
     crop_size: 224
     mirror: true
     fix_crop: true
-	multi_scale: true
-	max_distort: 1
+    multi_scale: true
+    max_distort: 1
     scale_ratios: [1,.875,.75]
-    is_flow: true
-	mean_value: [128, 128]
+    is_singleflow: true
+    mean_value: [128, 128, 128]
   }
   include: { phase: TRAIN }
 }
@@ -32,22 +34,24 @@ layer {
     source: "examples/action_recognition/dataset_file_examples/val_myflow_split1.txt"
     batch_size: 5
     new_length: 1
+    new_height: 256
+    new_width: 340
     num_segments: 1
-    modality: FLOW
+    modality: RGB
   }
   transform_param{
     crop_size: 224
     mirror: false
-    is_flow: true
-    mean_value: [128, 128]
+    is_singleflow: true
+    mean_value: [128, 128, 128]
   }
   include: { phase: TEST }
 }
 layer {
-  name: "conv1_1_flow"
+  name: "conv1_1"
   type: "Convolution"
   bottom: "data"
-  top: "conv1_1_flow"
+  top: "conv1_1"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -65,13 +69,13 @@ layer {
 layer {
   name: "relu1_1"
   type: "ReLU"
-  bottom: "conv1_1_flow"
-  top: "conv1_1_flow"
+  bottom: "conv1_1"
+  top: "conv1_1"
 }
 layer {
   name: "conv1_2"
   type: "Convolution"
-  bottom: "conv1_1_flow"
+  bottom: "conv1_1"
   top: "conv1_2"
   param {
     lr_mult: 1
@@ -496,10 +500,10 @@ layer {
   }
 }
 layer {
-  name: "fc8"
+  name: "fc8-1"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "fc8"
+  top: "fc8-1"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -523,7 +527,7 @@ layer {
 layer {
   name: "loss"
   type: "SoftmaxWithLoss"
-  bottom: "fc8"
+  bottom: "fc8-1"
   bottom: "label"
   include {
     phase: TRAIN
@@ -532,7 +536,7 @@ layer {
 layer {
   name: "loss"
   type: "SoftmaxWithLoss"
-  bottom: "fc8"
+  bottom: "fc8-1"
   bottom: "label"
   top: "loss"
   include {
@@ -542,7 +546,7 @@ layer {
 layer {
   name: "accuracy"
   type: "Accuracy"
-  bottom: "fc8"
+  bottom: "fc8-1"
   bottom: "label"
   top: "accuracy"
   include {
