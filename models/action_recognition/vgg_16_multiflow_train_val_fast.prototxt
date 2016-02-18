@@ -1,26 +1,25 @@
-name: "CUHK_Action_SpatialNet"
+name: "CUHK_Action_TemporalNet"
 layer {
   name: "data"
   type: "VideoData"
   top: "data"
   top: "label_local"
   video_data_param {
-    source: "examples/action_recognition/dataset_file_examples/train_singlergb_split1.txt"
-    batch_size: 16
-    new_width: 340
-    new_height: 256
-    new_length: 1
+    source: "examples/action_recognition/dataset_file_examples/train_multiflow_split1.txt"
+    batch_size: 22
+    new_length: 10
     num_segments: 1
-    modality: RGB
+    modality: FLOW
   }
   transform_param{
     crop_size: 224
     mirror: true
     fix_crop: true
-    multi_scale: true
-    max_distort: 1
-    scale_ratios: [1,.875,.75,.66]
-    mean_value: [104, 117, 123]
+	multi_scale: true
+	max_distort: 1
+    scale_ratios: [1,.875,.75]
+    is_flow: true
+	mean_value: [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]
   }
   include: { phase: TRAIN }
 }
@@ -30,18 +29,17 @@ layer {
   top: "data"
   top: "label_local"
   video_data_param {
-    source: "examples/action_recognition/dataset_file_examples/val_singlergb_split1.txt"
+    source: "examples/action_recognition/dataset_file_examples/val_multiflow_split1.txt"
     batch_size: 5
-    new_length: 1
-    new_height: 256
-    new_width: 340
+    new_length: 10
     num_segments: 1
-    modality: RGB
+    modality: FLOW
   }
   transform_param{
     crop_size: 224
     mirror: false
-    mean_value: [104, 117, 123]
+    is_flow: true
+    mean_value: [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128]
   }
   include: { phase: TEST }
 }
@@ -494,14 +492,14 @@ layer {
   bottom: "fc7"
   top: "fc7"
   dropout_param {
-    dropout_ratio: 0.9
+    dropout_ratio: 0.8
   }
 }
 layer {
-  name: "fc8-1"
+  name: "fc8"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "fc8-1"
+  top: "fc8"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -525,7 +523,7 @@ layer {
 layer {
   name: "loss"
   type: "SoftmaxWithLoss"
-  bottom: "fc8-1"
+  bottom: "fc8"
   bottom: "label"
   include {
     phase: TRAIN
@@ -534,7 +532,7 @@ layer {
 layer {
   name: "loss"
   type: "SoftmaxWithLoss"
-  bottom: "fc8-1"
+  bottom: "fc8"
   bottom: "label"
   top: "loss"
   include {
@@ -544,7 +542,7 @@ layer {
 layer {
   name: "accuracy"
   type: "Accuracy"
-  bottom: "fc8-1"
+  bottom: "fc8"
   bottom: "label"
   top: "accuracy"
   include {
