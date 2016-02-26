@@ -11,5 +11,5 @@ momentum: 0.9
 weight_decay: 0.0005
 snapshot: 1000
 snapshot_prefix: "models/tvseries/snapshot/tvseries_action_recognition_vgg_16_rgb"
-iter_size: 4
+iter_size: 1
 device_id: [0]

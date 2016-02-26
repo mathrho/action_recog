@@ -6,7 +6,7 @@ layer {
   top: "label_local"
   video_data_param {
     source: "examples/tvseries/dataset_file_examples/annot_caffe_train.txt"
-    batch_size: 16
+    batch_size: 256
     new_width: 340
     new_height: 256
     new_length: 1
@@ -31,7 +31,7 @@ layer {
   top: "label_local"
   video_data_param {
     source: "examples/tvseries/dataset_file_examples/annot_caffe_val.txt"
-    batch_size: 5
+    batch_size: 80
     new_length: 1
     new_height: 256
     new_width: 340
@@ -498,10 +498,10 @@ layer {
   }
 }
 layer {
-  name: "fc8-1"
+  name: "fc8-tvseries"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "fc8-1"
+  top: "fc8-tvseries"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -511,7 +511,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 101
+    num_output: 55
     weight_filler {
       type: "gaussian"
       std: 0.001
@@ -525,7 +525,7 @@ layer {
 layer {
   name: "loss"
   type: "SoftmaxWithLoss"
-  bottom: "fc8-1"
+  bottom: "fc8-tvseries"
   bottom: "label"
   include {
     phase: TRAIN
@@ -534,7 +534,7 @@ layer {
 layer {
   name: "loss"
   type: "SoftmaxWithLoss"
-  bottom: "fc8-1"
+  bottom: "fc8-tvseries"
   bottom: "label"
   top: "loss"
   include {
@@ -544,7 +544,7 @@ layer {
 layer {
   name: "accuracy"
   type: "Accuracy"
-  bottom: "fc8-1"
+  bottom: "fc8-tvseries"
   bottom: "label"
   top: "accuracy"
   include {
