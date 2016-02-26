@@ -15,7 +15,7 @@ if __name__ == "__main__":
         for line in fp:
             splits = line.rstrip().split(' ')
             label = int(splits[2]) - 1
-            fp_.write(splits[0]+' '+splits[1]+' '+str(label))
+            fp_.write(splits[0]+' '+splits[1]+' '+str(label)+'\n')
     fp_.close()
 
     ###
@@ -25,7 +25,7 @@ if __name__ == "__main__":
         for line in fp:
             splits = line.rstrip().split(' ')
             label = int(splits[2]) - 1
-            fp_.write(splits[0]+' '+splits[1]+' '+str(label))
+            fp_.write(splits[0]+' '+splits[1]+' '+str(label)+'\n')
     fp_.close()
 
     ###
@@ -35,7 +35,7 @@ if __name__ == "__main__":
         for line in fp:
             splits = line.rstrip().split(' ')
             label = int(splits[2]) - 1
-            fp_.write(splits[0]+' '+splits[1]+' '+str(label))
+            fp_.write(splits[0]+' '+splits[1]+' '+str(label)+'\n')
     fp_.close()
 
     print '*********** PROCESSED ALL *************'
