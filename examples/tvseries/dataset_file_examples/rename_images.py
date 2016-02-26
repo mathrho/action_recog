@@ -6,7 +6,7 @@ import subprocess
 from os import listdir
 import glob
 from os.path import isfile, join
-
+import cv2
 
 def cp_rn_imagefile(from_dir, filename, to_dir):
 
@@ -20,12 +20,16 @@ def cp_rn_imagefile(from_dir, filename, to_dir):
 
     # copy and rename images
     for i, frame in enumerate(frames):
-        copy_to = join(to_dir, filename, 'image_{0:04d}.jpg'.format(i+1))
-        cmd_line = 'cp %s %s' % (frame,copy_to,)
-        proc = subprocess.Popen(cmd_line, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, universal_newlines=True)
-        while proc.poll() is None:
-            line = proc.stdout.readline()
-            #print(line)
+        #copy_to = join(to_dir, filename, 'image_{0:04d}.jpg'.format(i+1))
+        #cmd_line = 'cp %s %s' % (frame,copy_to,)
+        #proc = subprocess.Popen(cmd_line, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, universal_newlines=True)
+        #while proc.poll() is None:
+        #    line = proc.stdout.readline()
+        #    #print(line)
+        save_to = join(to_dir, filename, 'image_{0:04d}.jpg'.format(i+1))
+        img = cv2.imread(frame, cv2.CV_LOAD_IMAGE_COLOR)
+        img = cv2.resize(img, (340, 256), interpolation=cv2.INTER_LINEAR)
+        cv2.imwrite(save_to, img)
 
 if __name__ == "__main__":
 
