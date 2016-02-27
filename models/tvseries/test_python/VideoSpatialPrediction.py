@@ -36,7 +36,8 @@ def VideoSpatialPrediction(
 
     print 'Video: ', vid_name, 'Duration: ', duration, 'Sample: ', num_samples
     # selection
-    step = int(math.floor((duration-1)/(num_samples-1)))
+    #step = int(math.floor((duration-1)/(num_samples-1)))
+    step = int(math.floor(duration/num_samples))
     #dims = (num_samples,3,224,224)
     dims = (num_samples,3,256,340)
     rgb = np.zeros(shape=dims, dtype=np.float32)
