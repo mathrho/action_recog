@@ -6,7 +6,7 @@ layer {
   top: "label_local"
   video_data_param {
     source: "examples/tvseries/dataset_file_examples/annot_caffe_train.txt"
-    batch_size: 64
+    batch_size: 32
     new_width: 340
     new_height: 256
     new_length: 1
@@ -31,7 +31,7 @@ layer {
   top: "label_local"
   video_data_param {
     source: "examples/tvseries/dataset_file_examples/annot_caffe_val.txt"
-    batch_size: 20
+    batch_size: 10
     new_length: 1
     new_height: 256
     new_width: 340
