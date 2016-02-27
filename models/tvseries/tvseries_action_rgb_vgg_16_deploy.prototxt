@@ -329,11 +329,11 @@ layer {
   }
 }
 layer {
-  name: "fc8-1"
+  name: "fc8-tvseries"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "fc8-1"
+  top: "fc8-tvseries"
   inner_product_param {
-    num_output: 101
+    num_output: 55
   }
 }
