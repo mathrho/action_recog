@@ -51,8 +51,8 @@ def main():
     #temporal_net = caffe.Net(model_def_file, model_file, caffe.TEST)
 
     # input video (containing image_*.jpg and flow_*.jpg) and some settings
-    #dataset = '../../../examples/tvseries/dataset_file_examples/annot_caffe_test.txt'
-    dataset = '../../../examples/tvseries/dataset_file_examples/annot_caffe_val.txt'
+    dataset = '../../../examples/tvseries/dataset_file_examples/annot_caffe_test.txt'
+    #dataset = '../../../examples/tvseries/dataset_file_examples/annot_caffe_val.txt'
     filenames = []
     numframes = []
     labels = []
