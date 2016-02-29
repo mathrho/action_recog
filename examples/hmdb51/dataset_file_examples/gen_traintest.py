@@ -4,6 +4,7 @@ import sys, os
 from os import listdir
 from os.path import isfile, join
 import numpy as np
+import re
 import glob
 
 
@@ -42,6 +43,7 @@ if __name__ == "__main__":
             filename = splits[0]
             label = int(splits[1])
             filename_ = os.path.splitext(os.path.basename(filename))[0]
+            filename_ = re.escape(filename_)
             filefullname = join(dataset, 'features', 'flow_tvl1_gpu', filename_)
 
             frames = glob.glob(join(filefullname, 'image_*.jpg'))
@@ -64,6 +66,7 @@ if __name__ == "__main__":
             filename = splits[0]
             label = int(splits[1])
             filename_ = os.path.splitext(os.path.basename(filename))[0]
+            filename_ = re.escape(filename_)
             filefullname = join(dataset, 'features', 'flow_tvl1_gpu', filename_)
 
             frames = glob.glob(join(filefullname, 'image_*.jpg'))
