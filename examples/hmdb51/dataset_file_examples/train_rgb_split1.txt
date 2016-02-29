@@ -915,9 +915,9 @@
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/AHF_Rapier_fencing_f_cm_np2_le_bad_2 54 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/AHF_Rapier_fencing_f_cm_np2_ri_bad_3 50 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/AHF_Rapier_fencing_f_cm_np2_ri_bad_4 56 13
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[[]HD]_avi_fencing_f_cm_np2_le_goo_0 71 13
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[[]HD]_avi_fencing_u_cm_np2_ba_goo_1 74 13
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[[]HD]_avi_fencing_u_cm_np2_fr_goo_2 81 13
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[HD]_avi_fencing_f_cm_np2_le_goo_0 71 13
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[HD]_avi_fencing_u_cm_np2_ba_goo_1 74 13
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[HD]_avi_fencing_u_cm_np2_fr_goo_2 81 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Duel_(The_Sovereigns_Servant)_fencing_f_cm_np2_fr_med_2 215 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Duel_(The_Sovereigns_Servant)_fencing_u_cm_np2_ba_med_1 61 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Duel_(The_Sovereigns_Servant)_fencing_u_cm_np2_le_med_3 171 13
@@ -992,7 +992,7 @@
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Acrobacias_de_un_fenomeno_flic_flac_f_cm_np1_fr_bad_0 37 14
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Acrobacias_de_un_fenomeno_flic_flac_f_cm_np1_fr_bad_1 40 14
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Acrobacias_de_un_fenomeno_flic_flac_f_cm_np1_fr_bad_2 40 14
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/BHS___FlickFlack_[[]Tutorial]_flic_flac_f_cm_np1_le_med_0 77 14
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/BHS___FlickFlack_[Tutorial]_flic_flac_f_cm_np1_le_med_0 77 14
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Bayer__Meisterin_Teresa_Stadler_flic_flac_f_cm_np1_ri_med_1 44 14
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Billie_2007_p8_Boden_flic_flac_f_cm_np1_ri_bad_1 79 14
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Boden-K_r_flic_flac_f_cm_np1_le_med_0 80 14
@@ -2658,9 +2658,9 @@
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/prelinger_LetsPlay1949_sit_u_cm_np1_le_med_9 102 37
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/prideandprejudice1_sit_f_cm_np1_ba_med_5 79 37
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/prideandprejudice1_sit_f_nm_np1_ri_med_10 75 37
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Ab_Workout__(_6_pack_abs_)_[[]_ab_exercises_for_ripped_abs_]_situp_f_nm_np1_le_goo_0 79 38
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Ab_Workout__(_6_pack_abs_)_[[]_ab_exercises_for_ripped_abs_]_situp_f_nm_np1_le_goo_1 79 38
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Ab_Workout__(_6_pack_abs_)_[[]_ab_exercises_for_ripped_abs_]_situp_f_nm_np1_le_goo_2 79 38
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Ab_Workout__(_6_pack_abs_)_[_ab_exercises_for_ripped_abs_]_situp_f_nm_np1_le_goo_0 79 38
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Ab_Workout__(_6_pack_abs_)_[_ab_exercises_for_ripped_abs_]_situp_f_nm_np1_le_goo_1 79 38
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Ab_Workout__(_6_pack_abs_)_[_ab_exercises_for_ripped_abs_]_situp_f_nm_np1_le_goo_2 79 38
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Abs__Situps__Crunches_situp_u_cm_np1_ri_goo_0 79 38
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Abs__Situps__Crunches_situp_u_cm_np1_ri_goo_1 79 38
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Abs__Situps__Crunches_situp_u_cm_np1_ri_goo_2 79 38

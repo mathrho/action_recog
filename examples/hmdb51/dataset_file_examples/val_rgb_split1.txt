@@ -2,9 +2,9 @@
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Aussie_Brunette_Brushing_Long_Hair_brush_hair_u_nm_np1_fr_goo_1 529 0
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Aussie_Brunette_Brushing_Long_Hair_brush_hair_u_nm_np1_fr_goo_2 647 0
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Aussie_Brunette_Brushing_Long_Hair_brush_hair_u_nm_np1_fr_med_0 259 0
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Brushing_Her_Hair__[[]_NEW_AUDIO_]_UPDATED!!!!_brush_hair_h_cm_np1_fr_goo_0 317 0
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Brushing_Her_Hair__[[]_NEW_AUDIO_]_UPDATED!!!!_brush_hair_h_cm_np1_le_goo_1 143 0
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Brushing_Her_Hair__[[]_NEW_AUDIO_]_UPDATED!!!!_brush_hair_h_cm_np1_le_goo_2 257 0
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Brushing_Her_Hair__[_NEW_AUDIO_]_UPDATED!!!!_brush_hair_h_cm_np1_fr_goo_0 317 0
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Brushing_Her_Hair__[_NEW_AUDIO_]_UPDATED!!!!_brush_hair_h_cm_np1_le_goo_1 143 0
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Brushing_Her_Hair__[_NEW_AUDIO_]_UPDATED!!!!_brush_hair_h_cm_np1_le_goo_2 257 0
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Brushing_my_long_hair_brush_hair_u_nm_np1_ba_goo_2 254 0
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Brushing_my_long_hair_brush_hair_u_nm_np1_fr_goo_0 211 0
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Brushing_my_long_hair_brush_hair_u_nm_np1_fr_goo_1 419 0
@@ -393,10 +393,10 @@
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Advanced_Rapier_fencing_f_cm_np2_le_bad_5 42 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Advanced_Rapier_fencing_f_cm_np2_ri_bad_1 47 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Advanced_Rapier_fencing_f_cm_np2_ri_bad_2 43 13
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[[]HD]_fencing_f_cm_np2_le_goo_0 72 13
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[[]HD]_fencing_u_cm_np2_ba_goo_1 72 13
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[[]HD]_fencing_u_cm_np2_fr_goo_2 81 13
-/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[[]HD]_fencing_u_cm_np2_fr_goo_3 89 13
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[HD]_fencing_f_cm_np2_le_goo_0 72 13
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[HD]_fencing_u_cm_np2_ba_goo_1 72 13
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[HD]_fencing_u_cm_np2_fr_goo_2 81 13
+/home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Die_Another_Day_-_Fencing_Scene_Part_1_[HD]_fencing_u_cm_np2_fr_goo_3 89 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Epee_Fencing_Attacks_-_Remises_fencing_f_nm_np2_le_bad_2 63 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Hamlet_(1996)_Fencing_Scenes_fencing_f_cm_np2_fr_med_1 108 13
 /home/zhenyang/Workspace/data/HMDB51/features/flow_tvl1_gpu/Hamlet_(1996)_Fencing_Scenes_fencing_u_cm_np2_fr_med_3 81 13
