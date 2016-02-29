@@ -43,7 +43,7 @@ if __name__ == "__main__":
             label = int(splits[1])
             filename_ = os.path.splitext(os.path.basename(filename))[0]
             _filename = filename_.replace('[', '[[]')
-            _filename = _filename.replace(']', '[]]')
+            #_filename = _filename.replace(']', '[]]')
 
             frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'image_*.jpg'))
             duration = len(frames)
@@ -66,7 +66,7 @@ if __name__ == "__main__":
             label = int(splits[1])
             filename_ = os.path.splitext(os.path.basename(filename))[0]
             _filename = filename_.replace('[', '[[]')
-            _filename = _filename.replace(']', '[]]')
+            #_filename = _filename.replace(']', '[]]')
 
             frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'image_*.jpg'))
             duration = len(frames)
