@@ -46,6 +46,8 @@ if __name__ == "__main__":
 
             frames = glob.glob(join(filefullname, 'image_*.jpg'))
             duration = len(frames)
+            if duration == 0:
+                print 'video: ', filename
             #print 'Duration: ', duration
 
             fp_train.write(filefullname+' '+str(duration)+' '+str(label)+'\n')
@@ -66,6 +68,8 @@ if __name__ == "__main__":
 
             frames = glob.glob(join(filefullname, 'image_*.jpg'))
             duration = len(frames)
+            if duration == 0:
+                print 'video: ', filename
             #print 'Duration: ', duration
 
             fp_test.write(filefullname+' '+str(duration)+' '+str(label)+'\n')
