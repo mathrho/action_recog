@@ -42,16 +42,16 @@ if __name__ == "__main__":
             filename = splits[0]
             label = int(splits[1])
             filename_ = os.path.splitext(os.path.basename(filename))[0]
-            filename_ = filename_.replace('[', '[[]')
-            filefullname = join(dataset, 'features', 'flow_tvl1_gpu', filename_)
+            _filename = filename_.replace('[', '[[]')
+            _filename = _filename.replace(']', '[]]')
 
-            frames = glob.glob(join(filefullname, 'image_*.jpg'))
+            frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'image_*.jpg'))
             duration = len(frames)
             if duration == 0:
                 print 'video: ', filename
             #print 'Duration: ', duration
 
-            fp_train.write(filefullname+' '+str(duration)+' '+str(label)+'\n')
+            fp_train.write(join(dataset, 'features', 'flow_tvl1_gpu', filename_)+' '+str(duration)+' '+str(label)+'\n')
 
             if duration > max_duration:
                 max_duration = duration
@@ -65,16 +65,16 @@ if __name__ == "__main__":
             filename = splits[0]
             label = int(splits[1])
             filename_ = os.path.splitext(os.path.basename(filename))[0]
-            filename_ = filename_.replace('[', '[[]')
-            filefullname = join(dataset, 'features', 'flow_tvl1_gpu', filename_)
+            _filename = filename_.replace('[', '[[]')
+            _filename = _filename.replace(']', '[]]')
 
-            frames = glob.glob(join(filefullname, 'image_*.jpg'))
+            frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'image_*.jpg'))
             duration = len(frames)
             if duration == 0:
                 print 'video: ', filename
             #print 'Duration: ', duration
 
-            fp_test.write(filefullname+' '+str(duration)+' '+str(label)+'\n')
+            fp_test.write(join(dataset, 'features', 'flow_tvl1_gpu', filename_)+' '+str(duration)+' '+str(label)+'\n')
 
             if duration > max_duration:
                 max_duration = duration
