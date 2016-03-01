@@ -40,18 +40,18 @@ def main():
     caffe.set_mode_gpu()
 
     # spatial prediction
-    model_def_file = '../hmdb51_action_spatial_vgg_16_deploy.prototxt'
-    #model_file = '../hmdb51_action_recognition_vgg_16_split1_rgb_iter_6K.caffemodel'
-    model_file = '../hmdb51_action_recognition_vgg_16_split1_rgb_iter_5K.caffemodel'
-    spatial_net = caffe.Net(model_def_file, model_file, caffe.TEST)
+    #model_def_file = '../hmdb51_action_spatial_vgg_16_deploy.prototxt'
+    #model_file = '../hmdb51_action_recognition_vgg_16_split1_rgb_iter_5K.caffemodel'
+    #spatial_net = caffe.Net(model_def_file, model_file, caffe.TEST)
 
     # temporal prediction
-    #model_def_file = '../cuhk_action_myflow_vgg_16_deploy.prototxt'
-    #model_file = '../lzy_action_recognition_vgg_16_split1_myflow_iter_56K.caffemodel'
-    #temporal_net = caffe.Net(model_def_file, model_file, caffe.TEST)
+    model_def_file = '../hmdb51_action_flow_vgg_16_deploy.prototxt'
+    model_file = '../hmdb51_action_recognition_vgg_16_split1_flow_iter_5K.caffemodel'
+    temporal_net = caffe.Net(model_def_file, model_file, caffe.TEST)
 
     # input video (containing image_*.jpg and flow_*.jpg) and some settings
-    dataset = '../../../examples/hmdb51/dataset_file_examples/val_rgb_split1.txt'
+    #dataset = '../../../examples/hmdb51/dataset_file_examples/val_rgb_split1.txt'
+    dataset = '../../../examples/hmdb51/dataset_file_examples/val_flow_split1.txt'
     filenames = []
     numframes = []
     labels = []
@@ -73,34 +73,33 @@ def main():
         input_video_dir = filename
         
         # temporal net prediction
-        #temporal_mean_file = 'flow_mean.mat'
-        #temporal_prediction = VideoTemporalPrediction(
-        #        input_video_dir,
-        #        temporal_mean_file,
-        #        temporal_net,
-        #        num_categories,
-        #        feature_layer,
-        #        start_frame)
+        temporal_prediction = VideoTemporalPrediction(
+                input_video_dir,
+                temporal_net,
+                num_categories,
+                feature_layer,
+                start_frame,
+                numframes[i])
 
         # 1)
         #temporal_pred = softmax(temporal_prediction)
         #temporal_pred = temporal_pred.argmax(axis=0)
         #avg_temporal_pred = stats.mode(temporal_pred)[0][0]
         ## 2)
-        #temporal_pred = softmax(temporal_prediction)
-        #temporal_pred = temporal_pred.mean(axis=1)
-        #avg_temporal_pred = temporal_pred.argmax()
+        temporal_pred = softmax(temporal_prediction)
+        temporal_pred = temporal_pred.mean(axis=1)
+        avg_temporal_pred = temporal_pred.argmax()
 
-        #preds[i] = int(avg_temporal_pred)
+        preds[i] = int(avg_temporal_pred)
 
         # spatial net prediction
-        spatial_prediction = VideoSpatialPrediction(
-                input_video_dir,
-                spatial_net,
-                num_categories,
-                feature_layer,
-                start_frame,
-                numframes[i])
+        #spatial_prediction = VideoSpatialPrediction(
+        #        input_video_dir,
+        #        spatial_net,
+        #        num_categories,
+        #        feature_layer,
+        #        start_frame,
+        #        numframes[i])
 
         ## 1)
         ##spatial_pred = softmax(spatial_prediction)
@@ -108,16 +107,15 @@ def main():
         ##print spatial_pred.shape
         ##avg_spatial_pred = stats.mode(spatial_pred)[0][0]
         ## 2)
-        spatial_pred = softmax(spatial_prediction)
-        spatial_pred = spatial_pred.mean(axis=1)
-        avg_spatial_pred = spatial_pred.argmax()
-        
-        preds[i] = int(avg_spatial_pred)
+        #spatial_pred = softmax(spatial_prediction)
+        #spatial_pred = spatial_pred.mean(axis=1)
+        #avg_spatial_pred = spatial_pred.argmax()
+
+        #preds[i] = int(avg_spatial_pred)
 
         # fused prediction (temporal:spatial = 2:1)
         #fused_pred = np.array(avg_temporal_pred) * 2./3 + \
         #             np.array(avg_spatial_pred) * 1./3
-        
 
     # calculate accuracy
     #print preds
