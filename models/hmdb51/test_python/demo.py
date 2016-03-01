@@ -41,7 +41,8 @@ def main():
 
     # spatial prediction
     model_def_file = '../hmdb51_action_spatial_vgg_16_deploy.prototxt'
-    model_file = '../hmdb51_action_recognition_vgg_16_split1_rgb_iter_6K.caffemodel'
+    #model_file = '../hmdb51_action_recognition_vgg_16_split1_rgb_iter_6K.caffemodel'
+    model_file = '../hmdb51_action_recognition_vgg_16_split1_rgb_iter_5K.caffemodel'
     spatial_net = caffe.Net(model_def_file, model_file, caffe.TEST)
 
     # temporal prediction
