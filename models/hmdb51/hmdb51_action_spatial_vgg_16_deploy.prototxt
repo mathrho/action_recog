@@ -1,4 +1,4 @@
-name: "CUHK_Action_SpatialNet"
+name: "Action_SpatialNet"
 input: "data"
 input_dim: 50
 input_dim: 3
@@ -329,11 +329,11 @@ layer {
   }
 }
 layer {
-  name: "fc8-1"
+  name: "fc8-hmdb51"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "fc8-1"
+  top: "fc8-hmdb51"
   inner_product_param {
-    num_output: 101
+    num_output: 51
   }
 }
