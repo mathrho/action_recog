@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 '''
 A sample script to run classificition using both spatial/temporal nets.
 Modify this script as needed.

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 '''
 A sample script to run classificition using both spatial/temporal nets.
 Modify this script as needed.
@@ -50,25 +48,25 @@ def main():
     #temporal_net = caffe.Net(model_def_file, model_file, caffe.TEST)
 
     # input video (containing image_*.jpg and flow_*.jpg) and some settings
-    dataset = '../../../examples/tvseries/dataset_file_examples/annot_caffe_test.txt'
+    dataset = './list_test.txt' # list_val.txt # list_train.txt
     filenames = []
     numframes = []
-    labels = []
+    #labels = []
     with open(dataset) as fp:
         for line in fp:
             splits = line.strip().split(' ')
             filenames.append(splits[0])
             numframes.append(int(splits[1]))
-            labels.append(int(splits[2]))
+            #labels.append(int(splits[2]))
 
     start_frame = 0
     num_categories = 55
     feature_layer = 'fc8-tvseries'
+    save_dir = '/home/zhenyang/Workspace/data/tvseries/results'
 
-    preds = np.zeros((len(filenames),), dtype=np.int64)
+    #preds = np.zeros((len(filenames),), dtype=np.int64)
     for i, filename in enumerate(filenames):
-
-        #filename_ = os.path.splitext(os.path.basename(filename))[0]
+        filename_ = os.path.splitext(os.path.basename(filename))[0]
         input_video_dir = filename
 
         # temporal net prediction
@@ -109,10 +107,19 @@ def main():
         ##avg_spatial_pred = stats.mode(spatial_pred)[0][0]
         ## 2)
         spatial_pred = softmax(spatial_prediction)
-        spatial_pred = spatial_pred.mean(axis=1)
-        avg_spatial_pred = spatial_pred.argmax()
-        
-        preds[i] = int(avg_spatial_pred)
+        #spatial_pred = spatial_pred.mean(axis=1)
+        #avg_spatial_pred = spatial_pred.argmax()
+
+        fp_result = open(join(save_dir, filename_ + '.txt'), 'w')
+        for j in xrange(numframes[i]):
+            # average 10 data augments
+            score = spatial_pred[:, j:(j+1)*10]
+            avg_score = score.mean(axis=1)
+            line = ','.join([str(x) for x in avg_score])
+            fp_result.write(line+'\n')
+        fp_result.close()
+
+        #preds[i] = int(avg_spatial_pred)
 
         # fused prediction (temporal:spatial = 2:1)
         #fused_pred = np.array(avg_temporal_pred) * 2./3 + \
@@ -123,8 +130,10 @@ def main():
     #print preds.argmax(axis=0)
     #print labels
     #preds = preds.argmax(axis=0)
-    acc = (preds == np.array(labels)).mean()
-    print 'Acc: ', acc
+    #acc = (preds == np.array(labels)).mean()
+    #print 'Acc: ', acc
+
+    print '*********** PROCESSED ALL *************'
 
 if __name__ == "__main__":
     main()

@@ -29,7 +29,8 @@ def VideoSpatialPrediction(
         ):
 
     if num_frames == 0:
-        imglist = glob.glob(os.path.join(vid_name, '*image_*.jpg'))
+        #imglist = glob.glob(os.path.join(vid_name, '*image_*.jpg'))
+        imglist = glob.glob(os.path.join(vid_name, 'frame_*.jpg'))
         duration = len(imglist)
     else:
         duration = num_frames
@@ -38,10 +39,13 @@ def VideoSpatialPrediction(
     # selection
     #step = int(math.floor((duration-1)/(num_samples-1)))
     step = int(math.floor(duration/num_samples))
+    assert step == 1
     #dims = (num_samples,3,224,224)
-    dims = (num_samples,3,256,340)
-    rgb = np.zeros(shape=dims, dtype=np.float32)
-    rgb_flip = np.zeros(shape=dims, dtype=np.float32)
+    #dims = (num_samples,3,256,340)
+    #rgb = np.zeros(shape=dims, dtype=np.float32)
+    #rgb_flip = np.zeros(shape=dims, dtype=np.float32)
+    dims = (num_samples*10,3,224,224)
+    rgbs = np.zeros(shape=dims, dtype=np.float32)
 
     for i in range(num_samples):
         img_file = os.path.join(vid_name, 'image_{0:04d}.jpg'.format(i*step+1))
@@ -56,34 +60,24 @@ def VideoSpatialPrediction(
         img = cv2.resize(img, (340, 256), interpolation=cv2.INTER_LINEAR)
         img = img - np.array([104., 117., 123.])
         img = np.transpose(img, (2,0,1))
-        rgb[i,:,:,:] = img
-        rgb_flip[i,:,:,:] = img[:,:,::-1]
+        #rgb[i,:,:,:] = img
+        #rgb_flip[i,:,:,:] = img[:,:,::-1]
+        rgb = img
+        rgb_flip = img[:,:,::-1]
 
-        #img = cv2.resize(img, dims[1::-1], interpolation=cv2.INTER_LINEAR)
-        #rgb[:,:,:,i] = img
-        #rgb_flip[:,:,:,i] = img[:,::-1,:]
+        # crop
+        rgbs[i*10,:,:,:] = rgb[:, :224, :224]
+        rgbs[i*10+1,:,:,:] = rgb[:, :224, -224:]
+        rgbs[i*10+2,:,:,:] = rgb[:, 16:240, 60:284]
+        rgbs[i*10+3,:,:,:] = rgb[:, -224:, :224]
+        rgbs[i*10+4,:,:,:] = rgb[:, -224:, -224:]
+        rgbs[i*10+5,:,:,:] = rgb_flip[:, :224, :224]
+        rgbs[i*10+6,:,:,:] = rgb_flip[:, :224, -224:]
+        rgbs[i*10+7,:,:,:] = rgb_flip[:, 16:240, 60:284]
+        rgbs[i*10+8,:,:,:] = rgb_flip[:, -224:, :224]
+        rgbs[i*10+9,:,:,:] = rgb_flip[:, -224:, -224:]
 
-    # crop
-    rgb_1 = rgb[:, :, :224, :224]
-    rgb_2 = rgb[:, :, :224, -224:]
-    rgb_3 = rgb[:, :, 16:240, 60:284]
-    rgb_4 = rgb[:, :, -224:, :224]
-    rgb_5 = rgb[:, :, -224:, -224:]
-    rgb_f_1 = rgb_flip[:, :, :224, :224]
-    rgb_f_2 = rgb_flip[:, :, :224, -224:]
-    rgb_f_3 = rgb_flip[:, :, 16:240, 60:284]
-    rgb_f_4 = rgb_flip[:, :, -224:, :224]
-    rgb_f_5 = rgb_flip[:, :, -224:, -224:]
-
-    #rgbs = rgb
-    rgbs = np.concatenate((rgb_1,rgb_2,rgb_3,rgb_4,rgb_5,rgb_f_1,rgb_f_2,rgb_f_3,rgb_f_4,rgb_f_5), axis=0)
-
-    # substract mean
-    #d = sio.loadmat(mean_file)
-    #image_mean = d['image_mean']
-    #rgbs = rgbs[:,:,::-1,:] - np.tile(image_mean[...,np.newaxis], (1, 1, 1, rgbs.shape[3]))
-    #rgbs = rgbs[:,:,:,:] - np.tile(image_mean[...,np.newaxis], (1, 1, 1, rgbs.shape[3]))
-    #rgbs = np.transpose(rgbs, (1,0,2,3))
+        #rgbs = np.concatenate((rgb_1,rgb_2,rgb_3,rgb_4,rgb_5,rgb_f_1,rgb_f_2,rgb_f_3,rgb_f_4,rgb_f_5), axis=0)
 
     # test
     batch_size = 50
