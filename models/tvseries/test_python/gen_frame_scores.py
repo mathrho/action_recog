@@ -51,7 +51,6 @@ def main():
 
     # input video (containing image_*.jpg and flow_*.jpg) and some settings
     dataset = '../../../examples/tvseries/dataset_file_examples/annot_caffe_test.txt'
-    #dataset = '../../../examples/tvseries/dataset_file_examples/annot_caffe_val.txt'
     filenames = []
     numframes = []
     labels = []
@@ -71,7 +70,7 @@ def main():
 
         #filename_ = os.path.splitext(os.path.basename(filename))[0]
         input_video_dir = filename
-        
+
         # temporal net prediction
         #temporal_mean_file = 'flow_mean.mat'
         #temporal_prediction = VideoTemporalPrediction(
@@ -118,8 +117,6 @@ def main():
         # fused prediction (temporal:spatial = 2:1)
         #fused_pred = np.array(avg_temporal_pred) * 2./3 + \
         #             np.array(avg_spatial_pred) * 1./3
-        
-        
 
     # calculate accuracy
     #print preds
