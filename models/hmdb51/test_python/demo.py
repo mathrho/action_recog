@@ -46,7 +46,8 @@ def main():
 
     # temporal prediction
     model_def_file = '../hmdb51_action_flow_vgg_16_deploy.prototxt'
-    model_file = '../hmdb51_action_recognition_vgg_16_split1_flow_iter_6K.caffemodel'
+    #model_file = '../hmdb51_action_recognition_vgg_16_split1_flow_iter_6K.caffemodel'
+    model_file = '../hmdb51_action_recognition_vgg_16_split1_flow_iter_11K.caffemodel'
     temporal_net = caffe.Net(model_def_file, model_file, caffe.TEST)
 
     # input video (containing image_*.jpg and flow_*.jpg) and some settings
