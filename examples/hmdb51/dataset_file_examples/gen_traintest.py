@@ -36,8 +36,8 @@ if __name__ == "__main__":
 
     max_duration = 0
     ##
-    #fp_train = open('./train_rgb_split2.txt', 'w')
-    fp_train = open('./train_flow_split2.txt', 'w')
+    fp_train = open('./train_rgb_split2.txt', 'w')
+    #fp_train = open('./train_flow_split2.txt', 'w')
     with open(join(dataset, 'train2.txt')) as fp:
         for line in fp:
             splits = line.rstrip().split(' ')
@@ -46,8 +46,8 @@ if __name__ == "__main__":
             filename_ = os.path.splitext(os.path.basename(filename))[0]
             _filename = filename_.replace('[', '[[]')
 
-            #frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'image_*.jpg'))
-            frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'flow_x_*.jpg'))
+            frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'image_*.jpg'))
+            #frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'flow_x_*.jpg'))
             duration = len(frames)
             if duration == 0:
                 print 'video: ', filename
@@ -60,8 +60,8 @@ if __name__ == "__main__":
     fp_train.close()
 
     ##
-    ##fp_test = open('./val_rgb_split2.txt', 'w')
-    fp_test = open('./val_flow_split2.txt', 'w')
+    fp_test = open('./val_rgb_split2.txt', 'w')
+    #fp_test = open('./val_flow_split2.txt', 'w')
     with open(join(dataset, 'test2.txt')) as fp:
         for line in fp:
             splits = line.rstrip().split(' ')
@@ -70,8 +70,8 @@ if __name__ == "__main__":
             filename_ = os.path.splitext(os.path.basename(filename))[0]
             _filename = filename_.replace('[', '[[]')
 
-            #frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'image_*.jpg'))
-            frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'flow_x_*.jpg'))
+            frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'image_*.jpg'))
+            #frames = glob.glob(join(dataset, 'features', 'flow_tvl1_gpu', _filename, 'flow_x_*.jpg'))
             duration = len(frames)
             if duration == 0:
                 print 'video: ', filename

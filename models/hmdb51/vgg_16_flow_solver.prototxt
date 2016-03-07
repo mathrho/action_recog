@@ -10,6 +10,6 @@ max_iter: 15000
 momentum: 0.9
 weight_decay: 0.0005
 snapshot: 1000
-snapshot_prefix: "models/hmdb51/snapshot/hmdb51_action_recognition_vgg_16_split1_flow"
+snapshot_prefix: "models/hmdb51/snapshot/hmdb51_action_recognition_vgg_16_split2_flow"
 iter_size: 3
 device_id: [0,1]
