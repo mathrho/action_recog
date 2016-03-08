@@ -11,10 +11,11 @@ if __name__ == "__main__":
 
     dataset = '/home/zhenyang/Workspace/data/HMDB51'
     #allclasses = sorted(glob.glob(join(dataset, 'test_train_splits', '*_test_split1.txt')))
-    allclasses = sorted(glob.glob(join(dataset, 'test_train_splits', '*_test_split2.txt')))
+    #allclasses = sorted(glob.glob(join(dataset, 'test_train_splits', '*_test_split2.txt')))
+    allclasses = sorted(glob.glob(join(dataset, 'test_train_splits', '*_test_split3.txt')))
 
-    fp_train = open(join(dataset, 'train2.txt'), 'w')
-    fp_test = open(join(dataset, 'test2.txt'), 'w')
+    fp_train = open(join(dataset, 'train3.txt'), 'w')
+    fp_test = open(join(dataset, 'test3.txt'), 'w')
     for c, class_file in enumerate(allclasses):
         with open(class_file) as fp:
             for line in fp:
@@ -36,9 +37,9 @@ if __name__ == "__main__":
 
     max_duration = 0
     ##
-    fp_train = open('./train_rgb_split2.txt', 'w')
-    #fp_train = open('./train_flow_split2.txt', 'w')
-    with open(join(dataset, 'train2.txt')) as fp:
+    fp_train = open('./train_rgb_split3.txt', 'w')
+    #fp_train = open('./train_flow_split3.txt', 'w')
+    with open(join(dataset, 'train3.txt')) as fp:
         for line in fp:
             splits = line.rstrip().split(' ')
             filename = splits[0]
@@ -60,9 +61,9 @@ if __name__ == "__main__":
     fp_train.close()
 
     ##
-    fp_test = open('./val_rgb_split2.txt', 'w')
-    #fp_test = open('./val_flow_split2.txt', 'w')
-    with open(join(dataset, 'test2.txt')) as fp:
+    fp_test = open('./val_rgb_split3.txt', 'w')
+    #fp_test = open('./val_flow_split3.txt', 'w')
+    with open(join(dataset, 'test3.txt')) as fp:
         for line in fp:
             splits = line.rstrip().split(' ')
             filename = splits[0]
