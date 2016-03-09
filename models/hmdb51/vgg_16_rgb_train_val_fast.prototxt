@@ -5,7 +5,7 @@ layer {
   top: "data"
   top: "label_local"
   video_data_param {
-    source: "examples/hmdb51/dataset_file_examples/train_rgb_split2.txt"
+    source: "examples/hmdb51/dataset_file_examples/train_rgb_split3.txt"
     batch_size: 32
     new_width: 340
     new_height: 256
@@ -30,7 +30,7 @@ layer {
   top: "data"
   top: "label_local"
   video_data_param {
-    source: "examples/hmdb51/dataset_file_examples/val_rgb_split2.txt"
+    source: "examples/hmdb51/dataset_file_examples/val_rgb_split3.txt"
     batch_size: 10
     new_length: 1
     new_height: 256
