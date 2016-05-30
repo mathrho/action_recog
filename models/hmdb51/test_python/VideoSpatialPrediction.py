@@ -39,10 +39,10 @@ def VideoSpatialPrediction(
     print 'Video: ', vid_name, 'Duration: ', duration, 'Sample: ', num_samples
     # selection
     step = int(math.floor((duration-1)/(num_samples-1)))
-    #dims = (num_samples,3,224,224)
-    dims = (num_samples,3,256,340)
+    dims = (num_samples,3,224,224)
+    #dims = (num_samples,3,256,340)
     rgb = np.zeros(shape=dims, dtype=np.float32)
-    rgb_flip = np.zeros(shape=dims, dtype=np.float32)
+    #rgb_flip = np.zeros(shape=dims, dtype=np.float32)
 
     for i in range(num_samples):
         img_file = os.path.join(vid_name, 'image_{0:04d}.jpg'.format(i*step+1))
@@ -53,31 +53,31 @@ def VideoSpatialPrediction(
         img = caffe.io.load_image(img_file)*255.0
         img = img[:,:,(2,1,0)]   #convert RGB-> BGR
 
-        #img = cv2.resize(img, (224, 224), interpolation=cv2.INTER_LINEAR)
-        img = cv2.resize(img, (340, 256), interpolation=cv2.INTER_LINEAR)
+        img = cv2.resize(img, (224, 224), interpolation=cv2.INTER_LINEAR)
+        #img = cv2.resize(img, (340, 256), interpolation=cv2.INTER_LINEAR)
         img = img - np.array([104., 117., 123.])
         img = np.transpose(img, (2,0,1))
         rgb[i,:,:,:] = img
-        rgb_flip[i,:,:,:] = img[:,:,::-1]
+        #rgb_flip[i,:,:,:] = img[:,:,::-1]
 
         #img = cv2.resize(img, dims[1::-1], interpolation=cv2.INTER_LINEAR)
         #rgb[:,:,:,i] = img
         #rgb_flip[:,:,:,i] = img[:,::-1,:]
 
     # crop
-    rgb_1 = rgb[:, :, :224, :224]
-    rgb_2 = rgb[:, :, :224, -224:]
-    rgb_3 = rgb[:, :, 16:240, 60:284]
-    rgb_4 = rgb[:, :, -224:, :224]
-    rgb_5 = rgb[:, :, -224:, -224:]
-    rgb_f_1 = rgb_flip[:, :, :224, :224]
-    rgb_f_2 = rgb_flip[:, :, :224, -224:]
-    rgb_f_3 = rgb_flip[:, :, 16:240, 60:284]
-    rgb_f_4 = rgb_flip[:, :, -224:, :224]
-    rgb_f_5 = rgb_flip[:, :, -224:, -224:]
+    #rgb_1 = rgb[:, :, :224, :224]
+    #rgb_2 = rgb[:, :, :224, -224:]
+    #rgb_3 = rgb[:, :, 16:240, 60:284]
+    #rgb_4 = rgb[:, :, -224:, :224]
+    #rgb_5 = rgb[:, :, -224:, -224:]
+    #rgb_f_1 = rgb_flip[:, :, :224, :224]
+    #rgb_f_2 = rgb_flip[:, :, :224, -224:]
+    #rgb_f_3 = rgb_flip[:, :, 16:240, 60:284]
+    #rgb_f_4 = rgb_flip[:, :, -224:, :224]
+    #rgb_f_5 = rgb_flip[:, :, -224:, -224:]
 
-    #rgbs = rgb
-    rgbs = np.concatenate((rgb_1,rgb_2,rgb_3,rgb_4,rgb_5,rgb_f_1,rgb_f_2,rgb_f_3,rgb_f_4,rgb_f_5), axis=0)
+    rgbs = rgb
+    #rgbs = np.concatenate((rgb_1,rgb_2,rgb_3,rgb_4,rgb_5,rgb_f_1,rgb_f_2,rgb_f_3,rgb_f_4,rgb_f_5), axis=0)
 
     # substract mean
     #d = sio.loadmat(mean_file)
