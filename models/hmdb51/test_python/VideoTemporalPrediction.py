@@ -39,10 +39,10 @@ def VideoTemporalPrediction(
     print 'Video: ', vid_name, 'Duration: ', duration, 'Sample: ', num_samples
     # selection
     step = int(math.floor((duration-optical_flow_frames+1)/num_samples))
-    dims = (num_samples,optical_flow_frames*2,256,340)
-    #dims = (num_samples,optical_flow_frames*2,224,224)
+    #dims = (num_samples,optical_flow_frames*2,256,340)
+    dims = (num_samples,optical_flow_frames*2,224,224)
     flow = np.zeros(shape=dims, dtype=np.float32)
-    flow_flip = np.zeros(shape=dims, dtype=np.float32)
+    #flow_flip = np.zeros(shape=dims, dtype=np.float32)
 
     for i in range(num_samples):
         for j in range(optical_flow_frames):
@@ -53,31 +53,31 @@ def VideoTemporalPrediction(
             #img_x = caffe.io.load_image(flow_x_file)*255.0
             #img_y = caffe.io.load_image(flow_y_file)*255.0
 
-            img_x = cv2.resize(img_x, (340, 256), interpolation=cv2.INTER_LINEAR)
-            img_y = cv2.resize(img_y, (340, 256), interpolation=cv2.INTER_LINEAR)
-            #img_x = cv2.resize(img_x, (224, 224), interpolation=cv2.INTER_LINEAR)
-            #img_y = cv2.resize(img_y, (224, 224), interpolation=cv2.INTER_LINEAR)
+            #img_x = cv2.resize(img_x, (340, 256), interpolation=cv2.INTER_LINEAR)
+            #img_y = cv2.resize(img_y, (340, 256), interpolation=cv2.INTER_LINEAR)
+            img_x = cv2.resize(img_x, (224, 224), interpolation=cv2.INTER_LINEAR)
+            img_y = cv2.resize(img_y, (224, 224), interpolation=cv2.INTER_LINEAR)
 
             flow[i,j*2,:,:] = img_x - 128.0
             flow[i,j*2+1,:,:] = img_y - 128.0
 
-            flow_flip[i,j*2,:,:] = 255 - img_x[:, ::-1] - 128.0
-            flow_flip[i,j*2+1,:,:] = img_y[:, ::-1] - 128.0
+            #flow_flip[i,j*2,:,:] = 255 - img_x[:, ::-1] - 128.0
+            #flow_flip[i,j*2+1,:,:] = img_y[:, ::-1] - 128.0
 
     # crop
-    flow_1 = flow[:, :, :224, :224]
-    flow_2 = flow[:, :, :224, -224:]
-    flow_3 = flow[:, :, 16:240, 60:284]
-    flow_4 = flow[:, :, -224:, :224]
-    flow_5 = flow[:, :, -224:, -224:]
-    flow_f_1 = flow_flip[:, :, :224, :224]
-    flow_f_2 = flow_flip[:, :, :224, -224:]
-    flow_f_3 = flow_flip[:, :, 16:240, 60:284]
-    flow_f_4 = flow_flip[:, :, -224:, :224]
-    flow_f_5 = flow_flip[:, :, -224:, -224:]
+    #flow_1 = flow[:, :, :224, :224]
+    #flow_2 = flow[:, :, :224, -224:]
+    #flow_3 = flow[:, :, 16:240, 60:284]
+    #flow_4 = flow[:, :, -224:, :224]
+    #flow_5 = flow[:, :, -224:, -224:]
+    #flow_f_1 = flow_flip[:, :, :224, :224]
+    #flow_f_2 = flow_flip[:, :, :224, -224:]
+    #flow_f_3 = flow_flip[:, :, 16:240, 60:284]
+    #flow_f_4 = flow_flip[:, :, -224:, :224]
+    #flow_f_5 = flow_flip[:, :, -224:, -224:]
 
-    #flows = flow
-    flows = np.concatenate((flow_1,flow_2,flow_3,flow_4,flow_5,flow_f_1,flow_f_2,flow_f_3,flow_f_4,flow_f_5), axis=0)
+    flows = flow
+    #flows = np.concatenate((flow_1,flow_2,flow_3,flow_4,flow_5,flow_f_1,flow_f_2,flow_f_3,flow_f_4,flow_f_5), axis=0)
 
     # substract mean
     #d = sio.loadmat(mean_file)
