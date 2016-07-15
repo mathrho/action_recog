@@ -30,6 +30,7 @@ def VideoSpatialPrediction(
 
     if num_frames == 0:
         #imglist = glob.glob(os.path.join(vid_name, '*image_*.jpg'))
+        print os.path.join(vid_name, 'frame_*.jpg')
         imglist = glob.glob(os.path.join(vid_name, 'frame_*.jpg'))
         duration = len(imglist)
     else:
@@ -37,12 +38,11 @@ def VideoSpatialPrediction(
 
     print 'Video: ', vid_name, 'Duration: ', duration, 'Sample: ', num_samples
     # selection
-    if duration < num_samples:
-        num_samples = duration
+    #if duration < num_samples:
+    #    num_samples = duration
     #step = int(math.floor((duration-1)/(num_samples-1)))
     step = int(math.floor(duration/num_samples))
-    #assert step == 1
-
+    assert step == 1
 
     #dims = (num_samples,3,224,224)
     #dims = (num_samples,3,256,340)
