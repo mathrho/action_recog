@@ -1,6 +1,6 @@
 name: "CUHK_Action_SpatialNet"
 input: "data"
-input_dim: 50
+input_dim: 100
 input_dim: 3
 input_dim: 224
 input_dim: 224

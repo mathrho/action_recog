@@ -1,0 +1,8 @@
+/home/zhenyang/Workspace/data/tvseries/frames/SoA2-000013 15750
+/home/zhenyang/Workspace/data/tvseries/frames/SoA2-000014 15750
+/home/zhenyang/Workspace/data/tvseries/frames/SoA2-000015 15750
+/home/zhenyang/Workspace/data/tvseries/frames/SoA2-000016 8425
+/home/zhenyang/Workspace/data/tvseries/frames/TF000013 15750
+/home/zhenyang/Workspace/data/tvseries/frames/TF000014 15750
+/home/zhenyang/Workspace/data/tvseries/frames/TF000015 15750
+/home/zhenyang/Workspace/data/tvseries/frames/TF000016 17325

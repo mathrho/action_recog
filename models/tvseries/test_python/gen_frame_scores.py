@@ -48,7 +48,7 @@ def main():
     #temporal_net = caffe.Net(model_def_file, model_file, caffe.TEST)
 
     # input video (containing image_*.jpg and flow_*.jpg) and some settings
-    dataset = './list_test.txt' # list_val.txt # list_train.txt
+    dataset = './list_test2.txt' # list_val.txt # list_train.txt
     filenames = []
     numframes = []
     #labels = []

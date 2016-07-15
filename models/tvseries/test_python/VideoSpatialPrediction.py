@@ -38,7 +38,7 @@ def VideoSpatialPrediction(
     print 'Video: ', vid_name, 'Duration: ', duration, 'Sample: ', num_samples
 
     # test
-    batch_size = 50
+    batch_size = 100
     # selection
     step = int(math.floor(duration/num_samples))
     assert step == 1
