@@ -33,7 +33,7 @@ def softmax(x):
 def main():
 
     # caffe init
-    gpu_id = 2
+    gpu_id = 3
     caffe.set_device(gpu_id)
     caffe.set_mode_gpu()
 
