@@ -10,13 +10,13 @@ import glob
 if __name__ == "__main__":
 
     ###
-    testset = '/home/egavves/Datasets/tvseries/videolist_test.txt'
+    testset = '/home/zhenyang/Workspace/data/tvseries/videolist_test.txt'
     fp_test = open('./list_test.txt', 'w')
     with open(testset) as fp:
         for line in fp:
             filename = line.rstrip().split(' ')[0]
             filename_ = os.path.splitext(os.path.basename(filename))[0]
-            vid_name = join('/home/egavves/Datasets/tvseries/frames', filename_)
+            vid_name = join('/home/zhenyang/Workspace/data/tvseries/frames', filename_)
 
             imglist = glob.glob(join(vid_name, 'frame_*.jpg'))
             duration = len(imglist)
@@ -25,13 +25,13 @@ if __name__ == "__main__":
     fp_test.close()
 
     ###
-    valset = '/home/egavves/Datasets/tvseries/videolist_val.txt'
+    valset = '/home/zhenyang/Workspace/data/tvseries/videolist_val.txt'
     fp_val = open('./list_val.txt', 'w')
     with open(valset) as fp:
         for line in fp:
             filename = line.rstrip().split(' ')[0]
             filename_ = os.path.splitext(os.path.basename(filename))[0]
-            vid_name = join('/home/egavves/Datasets/tvseries/frames', filename_)
+            vid_name = join('/home/zhenyang/Workspace/data/tvseries/frames', filename_)
 
             imglist = glob.glob(join(vid_name, 'frame_*.jpg'))
             duration = len(imglist)
@@ -40,13 +40,13 @@ if __name__ == "__main__":
     fp_val.close()
 
     ###
-    trainset = '/home/egavves/Datasets/tvseries/videolist_train.txt'
+    trainset = '/home/zhenyang/Workspace/data/tvseries/videolist_train.txt'
     fp_train = open('./list_train.txt', 'w')
     with open(trainset) as fp:
         for line in fp:
             filename = line.rstrip().split(' ')[0]
             filename_ = os.path.splitext(os.path.basename(filename))[0]
-            vid_name = join('/home/egavves/Datasets/tvseries/frames', filename_)
+            vid_name = join('/home/zhenyang/Workspace/data/tvseries/frames', filename_)
 
             imglist = glob.glob(join(vid_name, 'frame_*.jpg'))
             duration = len(imglist)
