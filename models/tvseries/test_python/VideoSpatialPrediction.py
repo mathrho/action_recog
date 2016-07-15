@@ -29,8 +29,8 @@ def VideoSpatialPrediction(
         ):
 
     if num_frames == 0:
-        imglist = glob.glob(os.path.join(vid_name, '*image_*.jpg'))
-        #imglist = glob.glob(os.path.join(vid_name, 'frame_*.jpg'))
+        #imglist = glob.glob(os.path.join(vid_name, '*image_*.jpg'))
+        imglist = glob.glob(os.path.join(vid_name, 'frame_*.jpg'))
         duration = len(imglist)
     else:
         duration = num_frames
@@ -52,8 +52,8 @@ def VideoSpatialPrediction(
         batch_range = range(i, min(i+N, num_samples))
         batch_rgbs = np.zeros(shape=(len(batch_range)*10,3,224,224), dtype=np.float32)
         for j,k in enumerate(batch_range):
-            img_file = os.path.join(vid_name, 'image_{0:04d}.jpg'.format(k+1))
-            #img_file = os.path.join(vid_name, 'frame_{0:05d}.jpg'.format(k+1))
+            #img_file = os.path.join(vid_name, 'image_{0:04d}.jpg'.format(k+1))
+            img_file = os.path.join(vid_name, 'frame_{0:05d}.jpg'.format(k+1))
 
             #img = cv2.imread(img_file, cv2.IMREAD_UNCHANGED)
             img = caffe.io.load_image(img_file)*255.0
