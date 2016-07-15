@@ -61,7 +61,7 @@ def main():
             labels.append(int(splits[2]))
 
     start_frame = 0
-    num_categories = 55
+    num_categories = 30
     feature_layer = 'fc8-tvseries'
 
     preds = np.zeros((len(filenames),), dtype=np.int64)
