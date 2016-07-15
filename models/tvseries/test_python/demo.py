@@ -39,7 +39,7 @@ def main():
 
     # spatial prediction
     model_def_file = '../tvseries_action_rgb_vgg_16_deploy.prototxt'
-    model_file = '../tvseries_action_recognition_vgg_16_rgb_iter_5K.caffemodel'
+    model_file = '../tvseries_action_recognition_vgg_16_rgb_iter_3K.caffemodel'
     spatial_net = caffe.Net(model_def_file, model_file, caffe.TEST)
 
     # temporal prediction
