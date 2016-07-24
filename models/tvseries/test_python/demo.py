@@ -16,7 +16,7 @@ if caffelib:
     sys.path.append(caffepath)
 import caffe
 
-from VideoSpatialPrediction import VideoSpatialPrediction
+from VideoSpatialPrediction_ import VideoSpatialPrediction
 from VideoTemporalPrediction import VideoTemporalPrediction
 
 #def softmax(x):
@@ -98,8 +98,8 @@ def main():
                 num_categories,
                 feature_layer,
                 start_frame,
-                0,
-                numframes[i])
+                0)
+                #numframes[i])
 
         ## 1)
         ##spatial_pred = softmax(spatial_prediction)
