@@ -81,7 +81,7 @@ def VideoSpatialPrediction(
         #rgbs = np.concatenate((rgb_1,rgb_2,rgb_3,rgb_4,rgb_5,rgb_f_1,rgb_f_2,rgb_f_3,rgb_f_4,rgb_f_5), axis=0)
 
     # test
-    batch_size = 50
+    batch_size = 100
     prediction = np.zeros((num_categories,rgbs.shape[0]))
     num_batches = int(math.ceil(float(rgbs.shape[0])/batch_size))
     in_data = np.zeros((batch_size,3,224,224), dtype=np.float32)
